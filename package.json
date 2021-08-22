@@ -1,22 +1,24 @@
 {
-  "name": "graphql-ejemplo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "babel src -d dist --source-maps",
-    "start": "babel-node src/index.js"
-  },
-  "keywords": [],
-  "author": "César Vargas Escorcia <cesarvargasescorcia@gmail.com> (https://github.com/cesar-vaesco)",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/node": "^7.14.9",
-    "@babel/preset-env": "^7.15.0"
-  }
+    "name": "graphql-ejemplo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "babel src -d dist --source-maps",
+        "start": "nodemon  src/index.js --exec babel-node ",
+        "serve": "node dist/index.js"
+    },
+    "keywords": [],
+    "author": "César Vargas Escorcia <cesarvargasescorcia@gmail.com> (https://github.com/cesar-vaesco)",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.14.8",
+        "@babel/core": "^7.15.0",
+        "@babel/node": "^7.14.9",
+        "@babel/preset-env": "^7.15.0",
+        "nodemon": "^2.0.12"
+    }
 }
