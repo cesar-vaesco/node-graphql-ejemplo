@@ -14,5 +14,50 @@ export const resolvers = {
         }, tasks(){
             return tasks;
         }
+    },
+    Mutation:{
+        createTask(_, { input }){
+            /* console.log(input); */
+            input._id = tasks.length;
+            tasks.push(input);
+            return input;
+        }
     }
 };
+
+
+/*
+
+Consulta en graphql
+
+query{
+  tasks{
+    _id
+    title
+    description
+    number
+  }
+
+  query{
+  greet(name: "César")
+}
+
+query{
+ hello
+}
+
+mutation{
+  createTask(input:{
+    title: "Break"
+    description:"Over Time"
+    number:200
+  })
+  {
+    _id
+    title
+    description
+    number
+  }
+}
+
+}*/
