@@ -6,8 +6,10 @@ export const resolvers = {
         hello: () => {
             return 'Hello World with Graphql'
         },
-        greet() {
-            return 2;
+        /* greet(root, args) { */
+        greet(root, {name}) {
+            console.log(name);
+            return `Hello ${name}!`
         }
     }
 };
