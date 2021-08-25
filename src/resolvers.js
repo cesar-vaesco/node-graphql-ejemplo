@@ -1,4 +1,5 @@
 
+import { tasks } from "./sample";
 
 export const resolvers = {
 
@@ -10,6 +11,8 @@ export const resolvers = {
         greet(root, {name}) {
             console.log(name);
             return `Hello ${name}!`
+        }, tasks(){
+            return tasks;
         }
     }
 };
