@@ -3,10 +3,10 @@ import { graphqlHTTP } from 'express-graphql';
 
 
 import schema from './schema'
-
+import { connect } from './databases';
 
 const app = express();
-
+connect();
 
 app.get('/', (req, res) => {
     res.json({
