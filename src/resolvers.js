@@ -2,9 +2,12 @@
 
 export const resolvers = {
 
-    Query:{
-        hello:() =>{
+    Query: {
+        hello: () => {
             return 'Hello World with Graphql'
+        },
+        greet() {
+            return 2;
         }
     }
 };
