@@ -8,6 +8,7 @@ const typeDefs = `
             hello: String
             greet(name:String!): String
             tasks:[ Task ]
+            Users: [User]
         }
 
         type Task{

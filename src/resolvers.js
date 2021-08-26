@@ -15,6 +15,8 @@ export const resolvers = {
             return `Hello ${name}!`
         }, tasks() {
             return tasks;
+        }, async Users(){
+            return await User.find();
         }
     },
     Mutation: {
@@ -64,6 +66,30 @@ mutation{
     title
     description
     number
+  }
+}
+
+
+mutation{
+  createUser(input: {
+    firstname: "Varonica"
+    lastname: "Cortez"
+    age: 41
+  })
+  {
+    _id
+    firstname
+    lastname
+    age
+  }
+}
+
+query{
+  Users{
+    firstname
+    lastname
+    age
+    _id
   }
 }
 
