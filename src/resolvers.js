@@ -30,8 +30,12 @@ export const resolvers = {
             const newUser = new User(input)
             await newUser.save();
             return newUser;
-        }, async deleteUser(_, { _id }) {
+        },
+         async deleteUser(_, { _id }) {
             return await User.findOneAndDelete( _id);
+        },
+        async updateUser(_, { _id, input }) {
+            return await User.findByIdAndUpdate(_id, input, {new: true});
         }
     }
 };
@@ -102,6 +106,21 @@ mutation{
   }
 }
 
+mutation{
+  updateUser(
+    _id: "6126de166e8b810718e15907",
+    input:{
+      firstname: "César"
+      lastname:"Vargas"
+    }
+  )
+  {
+    _id
+    firstname
+    lastname
+    age
+  }
+}
 
 
 }*/
