@@ -19,7 +19,10 @@ app.get('/', (req, res) => {
 // http://localhost:3000/graphql
 app.use('/graphql', graphqlHTTP({
     graphiql: true,
-    schema: schema
+    schema: schema,
+    context: {
+        messageId: 'test'
+    }
 }));
 
 

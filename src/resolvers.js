@@ -1,6 +1,8 @@
 
 import { tasks } from "./sample";
 
+import User from "./models/User";
+
 export const resolvers = {
 
     Query: {
@@ -8,19 +10,24 @@ export const resolvers = {
             return 'Hello World with Graphql'
         },
         /* greet(root, args) { */
-        greet(root, {name}) {
-            console.log(name);
+        greet(root, { name }, ctx) {
+            console.log(ctx);
             return `Hello ${name}!`
-        }, tasks(){
+        }, tasks() {
             return tasks;
         }
     },
-    Mutation:{
-        createTask(_, { input }){
+    Mutation: {
+        createTask(_, { input }) {
             /* console.log(input); */
             input._id = tasks.length;
             tasks.push(input);
             return input;
+        },
+        async createUser(_, { input }) {
+            const newUser = new User(input)
+            await newUser.save();
+            return newUser;
         }
     }
 };
