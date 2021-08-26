@@ -30,6 +30,8 @@ export const resolvers = {
             const newUser = new User(input)
             await newUser.save();
             return newUser;
+        }, async deleteUser(_, { _id }) {
+            return await User.findOneAndDelete( _id);
         }
     }
 };
@@ -53,6 +55,15 @@ query{
 
 query{
  hello
+}
+
+query{
+  Users{
+    firstname
+    lastname
+    age
+    _id
+  }
 }
 
 mutation{
@@ -84,13 +95,13 @@ mutation{
   }
 }
 
-query{
-  Users{
+mutation{
+  deleteUser(_id:"6126dba61174ef29ef6fdda5"){
     firstname
     lastname
-    age
-    _id
   }
 }
+
+
 
 }*/
