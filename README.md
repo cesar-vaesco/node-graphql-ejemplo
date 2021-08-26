@@ -1,3 +1,10 @@
+
+## Api creada con node - graphql - mongo - express ambientada con babel, para poder utilizar las ultimas caracteriticas de ECMAScript
+
+
+
+
+
 ### rimraf
 
 
